@@ -1,0 +1,10 @@
+A=int(input())
+B=int(input())
+C=int(input())
+temp=C
+B=A
+C=B
+A=temp
+print(A)
+print(B)
+print(C)

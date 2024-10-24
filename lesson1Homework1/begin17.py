@@ -1,0 +1,6 @@
+A=int(input())
+B=int(input())
+C=int(input())
+print(abs(C-A))
+print(abs(C-B))
+print(abs(C-A)+abs(C-B))

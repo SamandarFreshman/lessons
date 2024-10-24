@@ -1,0 +1,5 @@
+a=int(input())
+b=int(input())
+c=int(input())
+print("V=",a*b*c)
+print("P=",2*(a*b+b*c+c*a))

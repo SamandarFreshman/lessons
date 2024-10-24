@@ -1,0 +1,5 @@
+X=int(input())
+A=int(input())
+Y=int(input())
+B=int(input())
+print(A/X+B/Y)
