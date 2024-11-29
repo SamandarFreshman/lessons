@@ -1,10 +1,10 @@
 from dotenv import load_dotenv
 import os
-import time
+from datetime import datetime
 load_dotenv()
 
 file = os.environ.get('HISTORY')
 
 def recording(msg):
     with open(file, 'at') as f:
-        f.write(time.datetime.gettimenow()+msg+"\n")
+        f.write("["+str(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))+"] "+msg+"\n")

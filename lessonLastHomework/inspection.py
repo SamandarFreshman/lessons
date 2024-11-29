@@ -16,6 +16,7 @@ try:
                 file_path = os.path.join(sql_source, file)
                 table_name = os.path.splitext(file)[0].replace('-', '_').replace(' ', '_')
                 notes = is_it_new(file_path, table_name,notes)
+                notes = should_it_be_updated(file_path, table_name,notes)
 
         except Exception as e:
             recording(f"Error: {e}")

@@ -17,3 +17,19 @@ def is_it_new(file_path,table_name,notes):
         recording(f"Error: {e}")
 
     return notes
+
+
+def should_it_be_updated(file_path,table_name,notes):
+    df = pd.read_csv(file_path,on_bad_lines='skip')
+    num_of_rows = df.shape[0]
+
+    for name in notes:
+        try:
+            if name["table_name"] == table_name and name["number_of_rows"] != num_of_rows:
+                recording(f"Table {table_name} has been updated. Updating the database")
+                create_table(df, table_name)
+                note_id = name["id"]
+                notes[note_id]["number_of_rows"] = num_of_rows
+        except Exception as e:
+            recording(f"Error: {e}")
+    return notes

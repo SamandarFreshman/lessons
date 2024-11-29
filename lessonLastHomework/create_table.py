@@ -11,9 +11,6 @@ load_dotenv()
 server = os.environ.get('SERVER_SOURCE')
 database = os.environ.get('DATABASE')
 driver = os.environ.get('DRIVER')
-user = os.environ.get('USER')
-password = os.environ.get('PASSWORD')
-
 
 conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};Trusted_Connection=yes;Connection Timeout=30'
 
@@ -23,7 +20,6 @@ cursor = connection.cursor()
 
 
 engine = create_engine(f'mssql+pyodbc:///?odbc_connect={conn_str}')
-
 
 def create_table(file_path,table_name):
     try:
